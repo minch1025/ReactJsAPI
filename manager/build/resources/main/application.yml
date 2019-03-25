@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    platform: mysql
+    driverClassName: com.mysql.cj.jdbc.Driver
+    initializationMode: always
+    url: jdbc:mysql://${RDS_HOSTNAME:127.0.0.1}:${RDS_PORT:3306}/${RDS_DB_NAME:izseacs}?parseTime=true&loc=Asia%2FTokyo
+    username: ${RDS_USERNAME:admin}
+    password: ${RDS_PASSWORD:hi4x4U0d3m45!}
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddlAuto: none
+hibernate:
+  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+logging:
+  file:
+    max-size: 50MB
+    max-history: 10
+  level:
+    root: info
+    org.springframework: info
+    org.hibernate: info
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.EnumType: trace
